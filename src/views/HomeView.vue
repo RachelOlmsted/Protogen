@@ -7,6 +7,12 @@ const isDark = computed(() => theme.global.name.value === 'dark')
 
 const links = [
   {
+    label: 'Portfolio',
+    detail: 'rachelolmsted.com',
+    href: 'https://rachelolmsted.com',
+    icon: 'mdi-briefcase-outline',
+  },
+  {
     label: 'LinkedIn',
     detail: 'linkedin.com/in/rachelolmsted',
     href: 'https://www.linkedin.com/in/rachelolmsted/',
