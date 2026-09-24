@@ -1,56 +1,66 @@
-:root {
-  --bg-deep: #071b2e;
-  --bg-mid: #0d2d45;
-  --panel: rgba(10, 21, 34, 0.82);
-  --panel-border: rgba(255, 255, 255, 0.2);
-  --card-shadow: rgba(32, 85, 126, 0.38);
-  --text-main: #edf7ff;
-  --text-soft: #b6d9ec;
-  --blue: #58b8ff;
-  --blue-strong: #2a6ff2;
-  --green: #73f0cf;
-  --green-strong: #23c2a1;
-  --button-start: rgba(88, 184, 255, 0.22);
-  --button-end: rgba(115, 240, 207, 0.2);
-}
+<template>
+  <main class="page-shell">
+    <div class="background-glow glow-one" aria-hidden="true"></div>
+    <div class="background-glow glow-two" aria-hidden="true"></div>
 
-* {
-  box-sizing: border-box;
-}
+    <section class="card" aria-label="Rachel Olmsted links page">
+      <div class="profile-wrap">
+        <img
+          src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=600&q=80"
+          alt="Rachel Olmsted portrait"
+          class="profile-image"
+        />
+      </div>
 
-html {
-  height: 100%;
-}
+      <p class="eyebrow">Hello, I’m</p>
+      <h1>Rachel Olmsted</h1>
+      <p class="bio">
+        I build thoughtful experiences, spark meaningful connections, and help
+        teams turn ideas into action.
+      </p>
 
-body {
-  margin: 0;
+      <nav class="link-list" aria-label="Primary links">
+        <a class="link-button" href="mailto:rachel.olmsted@slalom.com">
+          <span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+              <path d="M3 6.75A2.75 2.75 0 0 1 5.75 4h12.5A2.75 2.75 0 0 1 21 6.75v10.5A2.75 2.75 0 0 1 18.25 20H5.75A2.75 2.75 0 0 1 3 17.25V6.75Zm2.05-.25 6.95 5.38a1 1 0 0 0 1.2 0l6.95-5.38H5.05Zm14.95 2.08-6.03 4.68a2.75 2.75 0 0 1-3.34 0L4 8.58v8.67c0 .41.34.75.75.75h13.5c.41 0 .75-.34.75-.75V8.58Z"/>
+            </svg>
+          </span>
+          <span class="label">Email</span>
+          <span class="detail">rachel.olmsted@slalom.com</span>
+        </a>
+
+        <a
+          class="link-button"
+          href="https://www.linkedin.com/in/rachelolmsted/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+              <path d="M6.94 8.5A1.56 1.56 0 1 1 6.94 5.4a1.56 1.56 0 0 1 0 3.1ZM5.5 9.9h2.9V18H5.5V9.9Zm5.08 0h2.76v1.13h.04c.38-.73 1.32-1.5 2.72-1.5 2.91 0 3.44 1.92 3.44 4.42V18h-2.9v-16c0-1.5-.03-3.42-2.09-3.42-2.1 0-2.42 1.64-2.42 3.33V18H10.58V9.9Z"/>
+            </svg>
+          </span>
+          <span class="label">LinkedIn</span>
+          <span class="detail">linkedin.com/in/rachelolmsted</span>
+        </a>
+      </nav>
+    </section>
+  </main>
+</template>
+
+<style scoped>
+.page-shell {
+  position: relative;
   min-height: 100vh;
   display: grid;
   place-items: center;
   padding: 24px;
-  font-family: "Inter", sans-serif;
-  color: var(--text-main);
-  background:
-    radial-gradient(circle at top left, rgba(88, 184, 255, 0.35), transparent 25%),
-    radial-gradient(circle at bottom right, rgba(115, 240, 207, 0.26), transparent 30%),
-    linear-gradient(135deg, var(--bg-deep) 0%, var(--bg-mid) 48%, #102d2e 100%);
   overflow: hidden;
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
-  background-size: 32px 32px;
-  mask-image: radial-gradient(circle at center, black 30%, transparent 90%);
-  pointer-events: none;
-}
-
 .background-glow {
-  position: fixed;
+  position: absolute;
   border-radius: 50%;
   filter: blur(80px);
   opacity: 0.75;
@@ -79,14 +89,13 @@ body::before {
   position: relative;
   width: min(100%, 480px);
   padding: 38px 28px 28px;
-  border: 1px solid var(--panel-border);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 28px;
   background: rgba(11, 23, 35, 0.74);
   backdrop-filter: blur(12px);
-  box-shadow: 0 24px 60px var(--card-shadow);
+  box-shadow: 0 24px 60px rgba(32, 85, 126, 0.38);
   text-align: center;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
-  transform-style: preserve-3d;
 }
 
 .profile-wrap {
@@ -113,7 +122,7 @@ body::before {
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.18em;
-  color: var(--green);
+  color: #73f0cf;
   font-weight: 700;
 }
 
@@ -122,13 +131,14 @@ h1 {
   font-size: clamp(2rem, 6vw, 2.7rem);
   line-height: 1.1;
   letter-spacing: -0.06em;
+  color: #edf7ff;
 }
 
 .bio {
   margin: 0 auto 28px;
   max-width: 360px;
   line-height: 1.65;
-  color: var(--text-soft);
+  color: #b6d9ec;
   font-size: 1rem;
 }
 
@@ -139,8 +149,6 @@ h1 {
 }
 
 .link-button {
-  --grad-start: rgba(88, 184, 255, 0.16);
-  --grad-end: rgba(115, 240, 207, 0.18);
   position: relative;
   display: grid;
   grid-template-columns: 40px 1fr;
@@ -150,8 +158,8 @@ h1 {
   padding: 15px 18px;
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.18);
-  background: linear-gradient(135deg, var(--grad-start), var(--grad-end));
-  color: var(--text-main);
+  background: linear-gradient(135deg, rgba(88, 184, 255, 0.16), rgba(115, 240, 207, 0.18));
+  color: #edf7ff;
   text-decoration: none;
   text-align: left;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
@@ -180,10 +188,6 @@ h1 {
   opacity: 1;
 }
 
-.link-button:active {
-  transform: translateY(0);
-}
-
 .icon {
   display: inline-flex;
   align-items: center;
@@ -193,6 +197,8 @@ h1 {
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.08);
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+  position: relative;
+  z-index: 1;
 }
 
 .icon svg {
@@ -232,7 +238,7 @@ h1 {
 }
 
 @media (max-width: 480px) {
-  body {
+  .page-shell {
     padding: 18px;
   }
 
@@ -260,3 +266,4 @@ h1 {
     height: 36px;
   }
 }
+</style>

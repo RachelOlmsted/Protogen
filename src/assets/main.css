@@ -1,0 +1,44 @@
+@import './base.css';
+
+:root {
+  font-family: 'Inter', sans-serif;
+  color: #edf7ff;
+  background: linear-gradient(135deg, #071b2e 0%, #0d2d45 48%, #102d2e 100%);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(circle at top left, rgba(88, 184, 255, 0.35), transparent 25%),
+    radial-gradient(circle at bottom right, rgba(115, 240, 207, 0.26), transparent 30%),
+    linear-gradient(135deg, #071b2e 0%, #0d2d45 48%, #102d2e 100%);
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(circle at center, black 30%, transparent 90%);
+  pointer-events: none;
+}
+
+#app {
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+}
